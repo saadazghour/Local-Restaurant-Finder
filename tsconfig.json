@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-native",
     "esModuleInterop": true,
@@ -12,12 +11,24 @@
     "noEmit": true,
     "skipLibCheck": true,
     "baseUrl": "./",
-    "types": ["node", "react", "react-native"],
+    "types": [
+      "node",
+      "react",
+      "react-native"
+    ],
     "paths": {
-      "*": ["types/*"]
+      "*": [
+        "types/*"
+      ]
     }
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",
