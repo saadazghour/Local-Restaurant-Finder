@@ -46,6 +46,6 @@ Before you start, make sure you have the following installed on your machine:
 
 Feel free to contribute to the project and make it even better! If you encounter any issues or have suggestions for improvements, please open an [issue](https://github.com/saadazghour/Local-Restaurant-Finder/issues). We welcome your contributions and ideas.
 
-**_Happy coding!._** 🚀
+**_Happy coding!_** 🚀
 
 ### Enjoy Exploring! 🌟
