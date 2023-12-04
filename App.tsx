@@ -1,34 +1,31 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./src/screens/HomeScreen";
-import DetailsScreen from "./src/screens/DetailsScreen";
-
-// import { NativeWindStyleSheet } from "nativewind";
-
-// NativeWindStyleSheet.setOutput({
-//   default: "native",
-// });
+import RestaurantList from "./src/components/HomeScreen";
+import RestaurantDetails from "./src/components/RestaurantDetails";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
+      {/*
+      
+      RestaurantList and RestaurantDetails are components rendered by Stack.Navigator, they will receive the navigation prop. You can use this prop to navigate between screens.
+      
+      */}
+
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Home"
+          options={{ title: "Restaurants" }}
+          component={RestaurantList}
+        />
+        <Stack.Screen
+          name="Restaurants Details"
+          component={RestaurantDetails}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
