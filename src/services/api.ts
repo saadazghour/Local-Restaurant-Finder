@@ -8,7 +8,7 @@ export const fetchNearbyRestaurants = async () => {
     const latitude = 37.786882;
     const longitude = -122.399972;
 
-    const queryURL = `${API_URL}/search?categories=restaurants&limit=10&latitude=${latitude}&longitude=${longitude}`;
+    const queryURL = `${API_URL}/search?categories=restaurants&limit=50&latitude=${latitude}&longitude=${longitude}`;
 
     const res = await fetch(`${CORS_PROXY_URL}/${queryURL}`, {
       method: "GET",
