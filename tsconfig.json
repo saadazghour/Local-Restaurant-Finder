@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "jsx": "react-native",
     "esModuleInterop": true,
@@ -11,15 +13,9 @@
     "noEmit": true,
     "skipLibCheck": true,
     "baseUrl": "./",
-    "types": [
-      "node",
-      "react",
-      "react-native"
-    ],
+    "types": ["node", "react", "react-native"],
     "paths": {
-      "*": [
-        "types/*"
-      ]
+      "*": ["types/*"]
     }
   },
   "include": [
