@@ -26,6 +26,8 @@ export const fetchNearbyRestaurants = async () => {
     });
 
     // If you get into this error, it means that the API key is incorrect or the API URL is incorrect.
+    // You can Enable access to the API by visiting the following link: https://cors-anywhere.herokuapp.com/corsdemo
+
     // You can refer to this Docs link for more information: https://github.com/Rob--W/cors-anywhere/issues/301
 
     if (!res.ok) {
