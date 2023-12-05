@@ -7,8 +7,13 @@ export const fetchNearbyRestaurants = async () => {
     // Example coordinates for San Francisco
     const latitude = 37.786882;
     const longitude = -122.399972;
+    const radius = 4000; // in meters (4 kilometers)
 
-    const queryURL = `${API_URL}/search?categories=restaurants&limit=50&latitude=${latitude}&longitude=${longitude}`;
+    if (!API_KEY || !API_URL || !CORS_PROXY_URL) {
+      throw new Error("API credentials not found");
+    }
+
+    const queryURL = `${API_URL}/search?categories=restaurants&limit=50&latitude=${latitude}&longitude=${longitude}&radius=${radius}`;
 
     const res = await fetch(`${CORS_PROXY_URL}/${queryURL}`, {
       method: "GET",
