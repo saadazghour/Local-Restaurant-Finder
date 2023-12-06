@@ -36,8 +36,10 @@ Before you start, make sure you have the following installed on your machine:
 
 4. **Enable CORS access by visiting this link**:
 
+   ###### **_To fix this, you need to request temporary access to the Heroku Proxy Server by going to the below URL:_**
+
    ```bash
-   https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&latitude=37.786882&longitude=-122.399972&radius=4000
+   https://cors-anywhere.herokuapp.com/corsdemo
    ```
 
 5. **Run the App:**
