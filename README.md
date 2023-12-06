@@ -34,13 +34,19 @@ Before you start, make sure you have the following installed on your machine:
    CORS_PROXY_URL=https://cors-anywhere.herokuapp.com
    ```
 
-4. **Run the App:**
+4. **Enable CORS access by visiting this link**:
+
+   ```bash
+   https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=restaurants&limit=50&latitude=37.786882&longitude=-122.399972&radius=4000
+   ```
+
+5. **Run the App:**
 
    ```bash
    npm start
    ```
 
-   ##### **_Scan the QR code using the Expo Go app on your mobile device or run in an emulator._**
+##### **_Scan the QR code using the Expo Go app on your mobile device or run in an emulator._**
 
 ## Contributing
 
@@ -49,3 +55,7 @@ Feel free to contribute to the project and make it even better! If you encounter
 **_Happy coding!_** 🚀
 
 ### Enjoy Exploring! 🌟
+
+```
+
+```
