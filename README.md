@@ -46,7 +46,7 @@ Before you start, make sure you have the following installed on your machine:
    npm start
    ```
 
-##### **_Scan the QR code using the Expo Go app on your mobile device or run in an emulator._**
+   ##### **_Scan the QR code using the Expo Go app on your mobile device or run in an emulator._**
 
 ## Contributing
 
@@ -55,7 +55,3 @@ Feel free to contribute to the project and make it even better! If you encounter
 **_Happy coding!_** 🚀
 
 ### Enjoy Exploring! 🌟
-
-```
-
-```
