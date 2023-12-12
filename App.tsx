@@ -3,9 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantList from "./src/components/HomeScreen";
 import RestaurantDetails from "./src/components/RestaurantDetails";
-import Header from "./src/components/Header";
+
 // import "./src/App.css";
-import { View } from "react-native";
 
 const Stack = createStackNavigator();
 
