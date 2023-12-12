@@ -6,12 +6,15 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  SafeAreaView,
 } from "react-native";
 import { fetchNearbyRestaurants } from "../services/api";
 
 import Header from "./Header";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { ScrollView } from "react-native";
+import SearchBar from "./SearchBar";
 
 const RestaurantImage = ({ image }: any) => {
   return (
@@ -64,6 +67,7 @@ const RestaurantInfo = ({ name, rating, review_count }: any) => {
 
 const HomeScreen = ({ navigation }: any) => {
   const [restaurants, setRestaurants] = useState<any[]>([]);
+  const [city, setCity] = useState("San Francisco");
 
   useEffect(() => {
     // Fetch nearby restaurants when the component mounts
@@ -83,37 +87,38 @@ const HomeScreen = ({ navigation }: any) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Header onChange={() => {}} />
-      <Text style={styles.titleStyle}>Local Restaurant Finder 🍔</Text>
+    <SafeAreaView style={styles.container}>
+      <SearchBar cityHandler={city} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* <Header onChange={() => {}} /> */}
+        <Text style={styles.titleStyle}>Local Restaurant Finder 🍔</Text>
 
-      <FlatList
-        data={restaurants}
-        horizontal={false}
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }: any) => (
-          <TouchableOpacity
-            key={item.id.toString()}
-            activeOpacity={1}
-            style={{ marginBottom: 30 }}
-            onPress={() => navigateToDetails(item)}
-          >
-            <View
-              style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}
+        <FlatList
+          data={restaurants}
+          horizontal={false}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }: any) => (
+            <TouchableOpacity
+              key={item.id.toString()}
+              activeOpacity={1}
+              style={{ marginBottom: 30 }}
+              onPress={() => navigateToDetails(item)}
             >
-              <RestaurantImage image={item?.image_url} />
+              <View style={{ marginTop: 10, backgroundColor: "white" }}>
+                <RestaurantImage image={item?.image_url} />
 
-              <RestaurantInfo
-                review_count={item.review_count}
-                name={item.name}
-                rating={item.rating}
-              />
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+                <RestaurantInfo
+                  review_count={item.review_count}
+                  name={item.name}
+                  rating={item.rating}
+                />
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
