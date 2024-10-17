@@ -13,7 +13,11 @@ export const fetchNearbyRestaurants = async () => {
       throw new Error("API credentials not found");
     }
 
+    // radius=${radius}
+
     const queryURL = `${API_URL}/search?categories=restaurants&limit=50&latitude=${latitude}&longitude=${longitude}&radius=${radius}`;
+
+    // const queryURL = `${API_URL}/search?term=restaurants&location=San Francisco&limit=10`;
 
     const res = await fetch(`${CORS_PROXY_URL}/${queryURL}`, {
       method: "GET",
@@ -36,6 +40,7 @@ export const fetchNearbyRestaurants = async () => {
     }
 
     const { businesses } = await res.json();
+
     return businesses;
   } catch (error) {
     throw new Error("Error fetching nearby restaurants");
